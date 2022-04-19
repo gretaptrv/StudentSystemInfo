@@ -10,21 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UserLogin;
 
-namespace StudentInfoSystem
+namespace WpfExample
 {
     /// <summary>
-    /// Interaction logic for LoginWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class MainWindow : Window
     {
-        public LoginWindow()
+        public MainWindow()
         {
             InitializeComponent();
-
+            this.DataContext = this;
         }
 
+        private InfoCommand _infoCommand = new InfoCommand();
+        public InfoCommand InformationCommand { get { return _infoCommand; } }
+
+        
     }
 }

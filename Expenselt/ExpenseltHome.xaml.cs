@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +19,7 @@ namespace Expenselt
     /// <summary>
     /// Interaction logic for ExpenseltHome.xaml
     /// </summary>
-    public partial class ExpenseltHome : Window
+    public partial class ExpenseltHome : Window, INotifyPropertyChanged
     {
         public ExpenseltHome()
         {
@@ -96,12 +98,36 @@ namespace Expenselt
             }
            };
             MainCaptionText = "View Expense Report :";
+            PeopleChecked = new ObservableCollection<string>();
         }
 
         public string MainCaptionText { get; set; }
         public List<Person> ExpenseDataSource { get; set; }
-        public DateTime LastChecked { get; set; }
-        
+        public ObservableCollection<string> PeopleChecked { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        /* {
+             add
+             {
+                 throw new NotImplementedException();
+             }
+
+             remove
+             {
+                 throw new NotImplementedException();
+             }
+         }*/
+        private DateTime lastChecked;
+        public DateTime LastChecked { get { return lastChecked; }
+            set
+            {
+                lastChecked = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("Last Checked"));
+                }
+            }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -109,6 +135,14 @@ namespace Expenselt
             report.Height = Height;
             report.Width = Width;
             report.ShowDialog();
+        }
+
+        private void PeopleListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            LastChecked = DateTime.Now;
+            PeopleChecked.Add(peopleListBox.SelectedItem.ToString());
+            //PeopleChecked.Add((peopleListBox.SelectedItem as System.Xml.XmlElement).Attributes["Name"].Value); 
+            //PeopleChecked.Add((peopleListBox.SelectedItem as System.Xml.XmlElement).GetAttributeNode("Name").Value);
         }
     }
 }

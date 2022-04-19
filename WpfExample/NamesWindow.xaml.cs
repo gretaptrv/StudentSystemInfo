@@ -11,20 +11,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using UserLogin;
 
-namespace StudentInfoSystem
+namespace WpfExample
 {
     /// <summary>
-    /// Interaction logic for LoginWindow.xaml
+    /// Interaction logic for NamesWindow.xaml
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class NamesWindow : Window
     {
-        public LoginWindow()
+        public NamesWindow()
         {
             InitializeComponent();
-
+            DataContext = new NamesList();
         }
-
     }
 }

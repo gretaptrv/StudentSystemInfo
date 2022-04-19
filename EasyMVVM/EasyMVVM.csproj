@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5D33D2CF-F097-41D4-976B-3D6923F268FA}</ProjectGuid>
+    <ProjectGuid>{5AC3E6AA-AF2C-4250-B551-74B0C076BF0D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>StudentInfoSystem</RootNamespace>
-    <AssemblyName>StudentInfoSystem</AssemblyName>
+    <RootNamespace>EasyMVVM</RootNamespace>
+    <AssemblyName>EasyMVVM</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -55,21 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModel\TestAction.cs" />
-    <Compile Include="ViewModel\TestDelegateCommand.cs" />
-    <Compile Include="LoginWindow.xaml.cs">
-      <DependentUpon>LoginWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Student.cs" />
-    <Compile Include="StudentData.cs" />
-    <Compile Include="StudentValidation.cs" />
-    <Compile Include="TestQ.xaml.cs">
-      <DependentUpon>TestQ.xaml</DependentUpon>
-    </Compile>
-    <Page Include="LoginWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -82,12 +67,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TestQ.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainWindowVM.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -112,12 +95,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UserLogin\UserLogin.csproj">
-      <Project>{715eef2e-4666-4204-9292-6821d2c35438}</Project>
-      <Name>UserLogin</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
