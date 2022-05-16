@@ -21,6 +21,7 @@
                 <Button Name="getBtn" Content="Get" HorizontalAlignment="Left" Margin="610,35,0,0" VerticalAlignment="Top" Click="getBtn_Click"/>
                 <Button Name="dsblBtn" Content="Disable" HorizontalAlignment="Left" Margin="650,35,0,0" VerticalAlignment="Top" Click="dsblBtn_Click"/>
                 <Button Name="nblBtn" Content="Enable" HorizontalAlignment="Left" Margin="710,35,0,0" VerticalAlignment="Top" Click="nblBtn_Click"/>
+                
             </Grid>
         </GroupBox>
 
@@ -44,6 +45,7 @@
                 <TextBox Name="groupT" HorizontalAlignment="Left" Margin="668,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="25"/>
                 <Button Name="exitBtn" Content="Излез от тестови режим" Visibility="Hidden" HorizontalAlignment="Left" Margin="610,160,0,0" VerticalAlignment="Top" Height="32" Width="132" Click="Button_Click"/>
                 <Button Name="enterBtn" Content="Влез в тестови режим" HorizontalAlignment="Left" Margin="610,200,0,0" VerticalAlignment="Top" Height="32" Width="132" Click="Button_Click1"/>
+                
             </Grid>
         </GroupBox>
 

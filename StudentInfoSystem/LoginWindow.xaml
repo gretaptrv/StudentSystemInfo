@@ -14,11 +14,27 @@
     </Window.InputBindings>
     <Grid>
         <Label Content="Въведете име и парола:" FontSize="30" HorizontalAlignment="Center" Margin="0,36,0,354"/>
-        <TextBox Text="{Binding St_name, UpdateSourceTrigger=PropertyChanged}" Name="username" HorizontalAlignment="Left" Margin="337,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" Height="32"/>
+        <TextBox Text="{Binding St_name, UpdateSourceTrigger=PropertyChanged}" Name="username" HorizontalAlignment="Left" Margin="337,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253" Height="32">
+        </TextBox>
         <TextBox Text="{Binding St_pass, UpdateSourceTrigger=PropertyChanged}" Name="password" HorizontalAlignment="Left" Margin="337,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="253" Height="32"/>
         <Label Content="Потребителско име:" FontSize="20" HorizontalAlignment="Left" Margin="119,142,0,0" VerticalAlignment="Top"/>
         <Label Content="Парола:" FontSize="20" HorizontalAlignment="Left" Margin="231,0,0,0" VerticalAlignment="Center"/>
-        <Button Command="{Binding getData}" Content="Покажи данни" FontSize="20" HorizontalAlignment="Left" Margin="474,312,0,0" VerticalAlignment="Top" Height="42" Width="141"/>
+        <Button Command="{Binding getData}" Content="Покажи данни" FontSize="20" HorizontalAlignment="Left"
+                Margin="474,312,0,0" VerticalAlignment="Top" Height="42" Width="141">
+            <Button.ToolTip>
+                <ToolTip>
+                    <StackPanel Width="200">
+                        <StackPanel Orientation="Horizontal" Background="Tan" Width="200">
+                            <Label Content="Съвет" Margin="10 5" FontSize="20" FontWeight="Bold"></Label>
+                            <Image Source="excl.png" Margin="10 5" Width="50px"/>
+                        </StackPanel>
+                        <TextBlock Text="Показвайте личните си данни избирателно" FontSize="14"
+                                   TextWrapping="WrapWithOverflow"></TextBlock>
+                        <Line Stroke="Gray" StrokeThickness="2" X2="200"></Line>
+                    </StackPanel>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
 
     </Grid>
 </Window>

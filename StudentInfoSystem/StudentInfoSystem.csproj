@@ -119,5 +119,14 @@
       <Name>UserLogin</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="att.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Yellow-warning-mark-illustration-on-transparent-background-PNG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="excl.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

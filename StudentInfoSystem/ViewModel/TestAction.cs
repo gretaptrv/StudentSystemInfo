@@ -38,7 +38,7 @@ namespace StudentInfoSystem.ViewModel
             set
             {
                 st_pass = value;
-                //RaisePropertyChangedEvent("SomeText");
+                RaisePropertyChangedEvent("St_pass");
             }
         }
 
